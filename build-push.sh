@@ -1,7 +1,7 @@
 #!/bin/bash
 
 IMAGE="sharky-ui"
-VERSION="00007"
+VERSION="00011"
 
 docker build -t ${IMAGE}:${VERSION} . && \
 docker tag ${IMAGE}:${VERSION} "gcr.io/sharky-259408/${IMAGE}:latest" && \
