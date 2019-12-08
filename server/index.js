@@ -35,10 +35,10 @@ app.use((req, res, next) => {
 app.get('/ping', (req, res) => {
   res.send('OK\n');
 });
-app.use(express.static('dist/sharky-ui'));
+app.use(express.static(path.join(__dirname, '../dist/sharky-ui')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/sharky-ui/index.html'));
+  res.sendFile(path.join(__dirname, '../dist/sharky-ui/index.html'));
 });
 
 app.listen(PORT, HOST);
