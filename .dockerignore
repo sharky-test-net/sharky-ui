@@ -1,6 +1,5 @@
-node_modules
-npm-debug.log
 app/node_modules
+server/node_modules
+
 app/npm-debug.log
-Dockerfile
-build-push.sh
+server/npm-debug.log
