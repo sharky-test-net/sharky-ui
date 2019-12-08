@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  serverURL: 'http://localhost:8080/',
+  gitHubClientID: '4f7a518f8ff6d9afa025'
 };
 
 /*
