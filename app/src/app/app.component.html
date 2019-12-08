@@ -60,6 +60,7 @@
 </nav>
 <div class="container">
   <div class="notification">
+    <p *ngIf="userEmail">{{userEmail}}</p>
     <!-- Github Button -->
     <a class="button is-medium is-github" href="{{'https://github.com/login/oauth/authorize?scope=user:email&client_id=' + clientID}}">
       <span class="icon">
