@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverURL: 'http://localhost:8080/',
+  apiServerURL: 'http://localhost:8080/',
   gitHubClientID: '4f7a518f8ff6d9afa025'
 };
 
