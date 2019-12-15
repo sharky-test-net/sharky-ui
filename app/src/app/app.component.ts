@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,7 +13,10 @@ import { environment } from '../environments/environment';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private authService: AuthService) { }
 
   title = 'sharky-ui';
   clientID = environment.gitHubClientID;
@@ -22,13 +26,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       if (params.code) {
-        axios
-          .get(environment.apiServerURL + 'login?code=' + params.code)
-          .then(res => {
-            this.userEmail = res.data.email;
-            this.router.navigate(['/']);
-          })
-          .catch(console.error);
+        this.authService.login(params.code);
       }
     });
   }
