@@ -1,10 +1,11 @@
+import { AppComponent } from './app.component';
+import { GithubLoginComponent } from './github-login/github-login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
-
 const routes: Routes = [
-  { path: 'github-login', component: AppComponent }
+  { path: '', pathMatch: 'full', component: AppComponent },
+  { path: 'github-login', component: GithubLoginComponent }
 ];
 
 @NgModule({
