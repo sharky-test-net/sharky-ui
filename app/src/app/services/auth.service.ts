@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 
 import { environment } from '../../environments/environment';
+import { Subject } from 'rxjs';
 
 export interface User {
   email: string;
@@ -16,6 +16,7 @@ export interface AuthResponse {
 }
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,25 +25,27 @@ export class AuthService {
   currentUser: User;
 
   constructor(
-    private router: Router,
     private http: HttpClient,
-  ) { }
+  ) {
+    this.authSubject = new Subject();
+  }
+
+  authSubject;
 
   login(code: string): void {
-    console.log('login');
     this.http
       .get<AuthResponse>(environment.apiServerURL + 'login?code=' + code)
       .subscribe(userInfo => {
         localStorage.setItem('token', userInfo.token);
         localStorage.setItem('user', JSON.stringify({ email: userInfo.email, username: userInfo.name }));
-        this.router.navigate(['/']);
+        this.authSubject.next({ type: 'login', payload: { email: userInfo.email, username: userInfo.name } });
       });
   }
 
   logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-    this.router.navigate(['/']);
+    this.authSubject.next({ type: 'logout', payload: null });
   }
 
 }
