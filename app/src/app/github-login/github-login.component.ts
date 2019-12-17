@@ -15,12 +15,20 @@ export class GithubLoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authService: AuthService
-  ) { }
+  ) {
+    console.log('GithubLoginComponent :: constructor');
+  }
+
+  oldParamsCode = null
 
   ngOnInit() {
+    console.log('GithubLoginComponent :: ngOnInit');
     this.route.queryParams
       .subscribe((params) => {
-        if (params.code) {
+        if (params.code && params.code !== this.oldParamsCode) {
+          console.log('GithubLoginComponent :: queryParams :: params.code changed');
+
+          this.oldParamsCode = params.code;
           this.authService.login(params.code);
         }
       });

@@ -27,12 +27,14 @@ export class AuthService {
   constructor(
     private http: HttpClient,
   ) {
+    console.log('AuthService :: constructor');
     this.authSubject = new Subject();
   }
 
   authSubject;
 
   login(code: string): void {
+    console.log('AuthService :: login');
     this.http
       .get<AuthResponse>(environment.apiServerURL + 'login?code=' + code)
       .subscribe(userInfo => {
@@ -42,7 +44,8 @@ export class AuthService {
       });
   }
 
-  logout() {
+  logout(): void {
+    console.log('AuthService :: logout');
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     this.authSubject.next({ type: 'logout', payload: null });

@@ -5,16 +5,17 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-    constructor(
-    ) { }
+  constructor(
+  ) {}
 
-    getCurrentUser() {
-        const userData = localStorage.getItem('user');
+  getCurrentUser() {
+    const userData = localStorage.getItem('user');
 
-        return userData ? JSON.parse(userData) : null;
-    }
+    return userData ? JSON.parse(userData) : null;
+  }
 
-    setCurrentUser(userData: any) {
-        localStorage.setItem('user', JSON.stringify(userData));
-    }
+  setCurrentUser(userData: any) {
+     localStorage.setItem('user', JSON.stringify(userData));
+  }
+
 }
