@@ -1,0 +1,64 @@
+.is-github {
+  color: #fff;
+  background-color: #444;
+  border-color: rgba(0, 0, 0, 0.2)
+}
+
+.is-github:focus,
+.is-github.focus {
+  color: #fff;
+  background-color: #2b2b2b;
+  border-color: rgba(0, 0, 0, 0.2)
+}
+
+.is-github:hover {
+  color: #fff;
+  background-color: #2b2b2b;
+  border-color: rgba(0, 0, 0, 0.2)
+}
+
+.is-github:active,
+.is-github.active,
+.open>.dropdown-toggle.is-github {
+  color: #fff;
+  background-color: #2b2b2b;
+  border-color: rgba(0, 0, 0, 0.2)
+}
+
+.is-github:active:hover,
+.is-github.active:hover,
+.open>.dropdown-toggle.is-github:hover,
+.is-github:active:focus,
+.is-github.active:focus,
+.open>.dropdown-toggle.is-github:focus,
+.is-github:active.focus,
+.is-github.active.focus,
+.open>.dropdown-toggle.is-github.focus {
+  color: #fff;
+  background-color: #191919;
+  border-color: rgba(0, 0, 0, 0.2)
+}
+
+.is-github:active,
+.is-github.active,
+.open>.dropdown-toggle.is-github {
+  background-image: none
+}
+
+.is-github.disabled:hover,
+.is-github[disabled]:hover,
+fieldset[disabled] .is-github:hover,
+.is-github.disabled:focus,
+.is-github[disabled]:focus,
+fieldset[disabled] .is-github:focus,
+.is-github.disabled.focus,
+.is-github[disabled].focus,
+fieldset[disabled] .is-github.focus {
+  background-color: #444;
+  border-color: rgba(0, 0, 0, 0.2)
+}
+
+.is-github .badge {
+  color: #444;
+  background-color: #fff
+}

@@ -22,7 +22,7 @@ export interface AuthResponse {
 })
 export class AuthService {
 
-  currentUser: User;
+  isAuthorized: boolean;
 
   constructor(
     private http: HttpClient,
@@ -36,10 +36,11 @@ export class AuthService {
   login(code: string): void {
     console.log('AuthService :: login');
     this.http
-      .get<AuthResponse>(environment.apiServerURL + 'login?code=' + code)
+      .get<AuthResponse>(environment.apiServerURL + '/login?code=' + code)
       .subscribe(userInfo => {
         localStorage.setItem('token', userInfo.token);
         localStorage.setItem('user', JSON.stringify({ email: userInfo.email, username: userInfo.name }));
+        this.isAuthorized = true;
         this.authSubject.next({ type: 'login', payload: { email: userInfo.email, username: userInfo.name } });
       });
   }
@@ -48,6 +49,7 @@ export class AuthService {
     console.log('AuthService :: logout');
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    this.isAuthorized = false;
     this.authSubject.next({ type: 'logout', payload: null });
   }
 

@@ -1,8 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { of } from 'rxjs';
-import { flatMap } from 'rxjs/operators'; import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from './../services/auth.service';
+import { AuthService } from './../../services/auth.service';
 
 @Component({
   selector: 'app-github-login',
@@ -19,7 +18,7 @@ export class GithubLoginComponent implements OnInit {
     console.log('GithubLoginComponent :: constructor');
   }
 
-  oldParamsCode = null
+  oldParamsCode = null;
 
   ngOnInit() {
     console.log('GithubLoginComponent :: ngOnInit');
