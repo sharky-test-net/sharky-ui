@@ -1,8 +1,9 @@
 <div class="box is-paddingless">
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+      <a class="navbar-item no-hover-style" routerLink="/">
+        <img src="./../../favicon.ico" width="28" height="28">
+        <span class="sharky-header-text">SHARKY TEST NETWORK</span>
       </a>
 
       <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
@@ -49,7 +50,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <div *ngIf="!currentUser">
+            <ng-container *ngIf="!currentUser">
               <!-- Github Button -->
               <a class="button is-medium is-github"
                 href="{{'https://github.com/login/oauth/authorize?scope=user:email&client_id=' + clientID}}">
@@ -58,13 +59,15 @@
                 </span>
                 <span>Sign in with GitHub</span>
               </a>
-            </div>
-            <div *ngIf="currentUser">
-              <p class="navbar-item is-inline-block">{{currentUser.username}}</p>
+            </ng-container>
+            <ng-container *ngIf="currentUser">
+              <a class="button is-inline-block is-medium is-white is-size-6 no-hover-style" routerLink="/user">
+                  {{currentUser.username}}
+              </a>
               <a class="button is-medium is-light" (click)='authService.logout()'>
                 Log out
               </a>
-            </div>
+            </ng-container>
           </div>
         </div>
       </div>

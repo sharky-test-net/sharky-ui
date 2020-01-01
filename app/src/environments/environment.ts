@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiServerURL: 'http://localhost:8080',
-  gitHubClientID: '3fc20a119f4e5f2edaf6'
+  gitHubClientID: '4f7a518f8ff6d9afa025'
 };
 
 /*
