@@ -1,0 +1,39 @@
+<div class="container sharky-container">
+  <div class="columns is-centered">
+    <div *ngIf="!user" class="column is-narrow">
+      <div class="lds-dual-ring"></div>
+    </div>
+    <div *ngIf="user" class="column is-5">
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Text input" [value]="user.email" disabled>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Text input" [(ngModel)]="user.name">
+        </div>
+      </div>
+      <label class="label">Hardware Token</label>
+      <div class="field is-grouped">
+        <p class="control is-expanded">
+          <input class="input" type="text" placeholder="Text input" [value]="user.hardwareToken" disabled>
+        </p>
+        <p class="control">
+          <a class="button" (click)="reissueHardwareToken()">
+            Reissue
+          </a>
+        </p>
+      </div>
+      <div class="field is-grouped is-grouped-left">
+        <p class="control">
+          <a class="button is-primary" (click)="updateUser()">
+            Save
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
