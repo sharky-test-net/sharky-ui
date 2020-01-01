@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './common/auth.interceptor';
 import { GithubLoginComponent } from './components/github-login/github-login.component';
-import { MainLayoutComponent } from './main-layout/main-layout.component';
+// import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { HeaderComponent } from './header/header.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
@@ -18,7 +18,7 @@ import { UserPageComponent } from './components/user-page/user-page.component';
   declarations: [
     AppComponent,
     GithubLoginComponent,
-    MainLayoutComponent,
+    // MainLayoutComponent,
     HeaderComponent,
     MainPageComponent,
     UserPageComponent

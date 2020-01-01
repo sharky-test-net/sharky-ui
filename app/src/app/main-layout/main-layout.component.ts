@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class MainLayoutComponent {
 
-  constructor() {
-    console.log('MainLayoutComponent :: constructor');
-  }
+  // constructor() {
+  //   console.log('MainLayoutComponent :: constructor');
+  // }
 
-  title = 'sharky-ui';
+  // title = 'sharky-ui';
 }
